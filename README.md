@@ -103,9 +103,11 @@ Millions of Indian citizens miss out on government benefits because:
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/<YOUR_USERNAME>/moneyfollows.git
-cd moneyfollows
+git clone https://github.com/axyz97836/Money-Follow-s.git
+cd Money-Follow-s
 ```
+
+> 🔗 **GitHub:** [github.com/axyz97836/Money-Follow-s](https://github.com/axyz97836/Money-Follow-s)
 
 ### 2. Environment Setup
 
