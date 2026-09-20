@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  yojana-setu:
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    environment:
+      - APP_ENV=production
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+      - TAVILY_API_KEY=${TAVILY_API_KEY}
+      - LLM_PROVIDER=openai
+      - LLM_MODEL=gpt-4o-mini
+      - SEARCH_PROVIDER=tavily
+    restart: unless-stopped
+    volumes:
+      - .env:/app/.env:ro

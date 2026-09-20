@@ -1,0 +1,150 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  /* Indian Tricolor inspired palette — refined and modern */
+  --color-saffron-50: #fff7ed;
+  --color-saffron-100: #ffedd5;
+  --color-saffron-200: #fed7aa;
+  --color-saffron-400: #fb923c;
+  --color-saffron-500: #f97316;
+  --color-saffron-600: #ea580c;
+  
+  --color-india-50: #f0f9ff;
+  --color-india-100: #e0f2fe;
+  --color-india-200: #bae6fd;
+  --color-india-400: #38bdf8;
+  --color-india-500: #0ea5e9;
+  --color-india-600: #0284c7;
+  --color-india-700: #0369a1;
+  --color-india-800: #075985;
+  --color-india-900: #0c4a6e;
+  
+  --color-neem-50: #f0fdf4;
+  --color-neem-100: #dcfce7;
+  --color-neem-200: #bbf7d0;
+  --color-neem-400: #4ade80;
+  --color-neem-500: #22c55e;
+  --color-neem-600: #16a34a;
+  --color-neem-700: #15803d;
+  
+  --color-surface-light: #ffffff;
+  --color-surface-muted: #f8fafc;
+  --color-surface-card: #ffffff;
+  --color-border-light: #e2e8f0;
+  --color-text-primary: #0f172a;
+  --color-text-secondary: #475569;
+  --color-text-muted: #94a3b8;
+  
+  /* Dark mode colors */
+  --color-dark-bg: #0b1120;
+  --color-dark-surface: #111827;
+  --color-dark-card: #1e293b;
+  --color-dark-border: #334155;
+  --color-dark-text: #f1f5f9;
+  --color-dark-text-secondary: #94a3b8;
+  --color-dark-text-muted: #64748b;
+  
+  /* Status colors */
+  --color-status-eligible: #16a34a;
+  --color-status-possibly: #ca8a04;
+  --color-status-info: #0ea5e9;
+  --color-status-not-eligible: #dc2626;
+  --color-status-unverified: #6b7280;
+  
+  /* Fonts */
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  
+  /* Animations */
+  --animate-fade-in: fade-in 0.5s ease-out;
+  --animate-slide-up: slide-up 0.4s ease-out;
+  --animate-pulse-gentle: pulse-gentle 2s ease-in-out infinite;
+  --animate-shimmer: shimmer 1.5s ease-in-out infinite;
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slide-up {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse-gentle {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+/* Base styles */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Dark mode using class strategy */
+.dark body,
+.dark {
+  background-color: var(--color-dark-bg);
+  color: var(--color-dark-text);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 3px;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: #475569;
+}
+
+/* Shimmer loading effect */
+.shimmer {
+  background: linear-gradient(
+    90deg,
+    #f1f5f9 25%,
+    #e2e8f0 50%,
+    #f1f5f9 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.5s ease-in-out infinite;
+}
+
+.dark .shimmer {
+  background: linear-gradient(
+    90deg,
+    #1e293b 25%,
+    #334155 50%,
+    #1e293b 75%
+  );
+  background-size: 200% 100%;
+}
+
+/* Focus styles */
+*:focus-visible {
+  outline: 2px solid var(--color-india-500);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
